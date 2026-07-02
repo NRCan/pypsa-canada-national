@@ -1,0 +1,278 @@
+CDUID,CSDNAME,province,cluster,manual_cluster
+1001,Division No.  1,NL,NL_1,NL_Newfoundland
+1002,Division No.  2,NL,NL_1,NL_Newfoundland
+1003,Division No.  3,NL,NL_0,NL_Newfoundland
+1004,Division No.  4,NL,NL_0,NL_Newfoundland
+1005,Division No.  5,NL,NL_0,NL_Newfoundland
+1006,Division No.  6,NL,NL_0,NL_Newfoundland
+1007,Division No.  7,NL,NL_1,NL_Newfoundland
+1008,Division No.  8,NL,NL_0,NL_Newfoundland
+1009,Division No.  9,NL,NL_2,NL_Newfoundland
+1010,Division No. 10,NL,NL_2,NL_Labrador
+1101,Kings,PE,PE_0,PE
+1102,Queens,PE,PE_0,PE
+1103,Prince,PE,PE_0,PE
+1201,Shelburne,NS,NS_1,NS_West
+1202,Yarmouth,NS,NS_1,NS_West
+1203,Digby,NS,NS_1,NS_West
+1204,Queens,NS,NS_1,NS_West
+1205,Annapolis,NS,NS_1,NS_West
+1206,Lunenburg,NS,NS_2,NS_West
+1207,Kings,NS,NS_1,NS_West
+1208,Hants,NS,NS_2,NS_West
+1209,Halifax,NS,NS_2,NS_West
+1210,Colchester,NS,NS_2,NS_West
+1211,Cumberland,NS,NS_2,NS_West
+1212,Pictou,NS,NS_0,NS_East
+1213,Guysborough,NS,NS_0,NS_East
+1214,Antigonish,NS,NS_0,NS_East
+1215,Inverness,NS,NS_0,NS_East
+1216,Richmond,NS,NS_0,NS_East
+1217,Cape Breton,NS,NS_0,NS_East
+1218,Victoria,NS,NS_0,NS_East
+1301,Saint John,NB,NB_2,NB_West
+1302,Charlotte,NB,NB_2,NB_West
+1303,Sunbury,NB,NB_2,NB_West
+1304,Queens,NB,NB_0,NB_East
+1305,Kings,NB,NB_0,NB_East
+1306,Albert,NB,NB_0,NB_East
+1307,Westmorland,NB,NB_0,NB_East
+1308,Kent,NB,NB_0,NB_East
+1309,Northumberland,NB,NB_0,NB_East
+1310,York,NB,NB_2,NB_West
+1311,Carleton,NB,NB_1,NB_West
+1312,Victoria,NB,NB_1,NB_West
+1313,Madawaska,NB,NB_1,NB_West
+1314,Restigouche,NB,NB_1,NB_West
+1315,Gloucester,NB,NB_1,NB_East
+2402,Le Rocher-Percé,QC,QC_4,QC_East
+2403,La Côte-de-Gaspé,QC,QC_4,QC_East
+2404,La Haute-Gaspésie,QC,QC_4,QC_East
+2405,Bonaventure,QC,QC_4,QC_East
+2406,Avignon,QC,QC_4,QC_East
+2407,La Matapédia,QC,QC_4,QC_East
+2408,La Matanie,QC,QC_4,QC_East
+2409,La Mitis,QC,QC_4,QC_East
+2410,Rimouski-Neigette,QC,QC_4,QC_East
+2411,Les Basques,QC,QC_4,QC_East
+2412,Rivière-du-Loup,QC,QC_4,QC_East
+2413,Témiscouata,QC,QC_4,QC_East
+2414,Kamouraska,QC,QC_4,QC_East
+2415,Charlevoix-Est,QC,QC_1,QC_Central
+2416,Charlevoix,QC,QC_1,QC_Central
+2418,Montmagny,QC,QC_2,QC_East
+2419,Bellechasse,QC,QC_2,QC_East
+2421,La Côte-de-Beaupré,QC,QC_1,QC_Central
+2422,La Jacques-Cartier,QC,QC_1,QC_Central
+2423,Québec,QC,QC_1,QC_Central
+2425,Lévis,QC,QC_2,QC_East
+2426,La Nouvelle-Beauce,QC,QC_2,QC_East
+2427,Robert-Cliche,QC,QC_2,QC_East
+2428,Les Etchemins,QC,QC_2,QC_East
+2429,Beauce-Sartigan,QC,QC_2,QC_East
+2430,Le Granit,QC,QC_2,QC_East
+2431,Les Appalaches,QC,QC_2,QC_East
+2432,L'Érable,QC,QC_5,QC_East
+2433,Lotbinière,QC,QC_5,QC_East
+2434,Portneuf,QC,QC_1,QC_Central
+2435,Mékinac,QC,QC_7,QC_Central
+2436,Shawinigan,QC,QC_7,QC_Central
+2437,Francheville,QC,QC_7,QC_Central
+2438,Bécancour,QC,QC_5,QC_East
+2439,Arthabaska,QC,QC_5,QC_East
+2440,Les Sources,QC,QC_5,QC_East
+2441,Le Haut-Saint-François,QC,QC_2,QC_East
+2442,Le Val-Saint-François,QC,QC_2,QC_East
+2443,Sherbrooke,QC,QC_2,QC_East
+2444,Coaticook,QC,QC_2,QC_East
+2445,Memphrémagog,QC,QC_2,QC_East
+2446,Brome-Missisquoi,QC,QC_3,QC_South
+2447,La Haute-Yamaska,QC,QC_3,QC_South
+2448,Acton,QC,QC_5,QC_East
+2449,Drummond,QC,QC_5,QC_East
+2450,Nicolet-Yamaska,QC,QC_5,QC_East
+2451,Maskinongé,QC,QC_7,QC_Central
+2452,D'Autray,QC,QC_0,QC_South
+2453,Pierre-De Saurel,QC,QC_5,QC_South
+2454,Les Maskoutains,QC,QC_3,QC_South
+2455,Rouville,QC,QC_3,QC_South
+2456,Le Haut-Richelieu,QC,QC_3,QC_South
+2457,La Vallée-du-Richelieu,QC,QC_3,QC_South
+2458,Longueuil,QC,QC_3,QC_South
+2459,Marguerite-D'Youville,QC,QC_3,QC_South
+2460,L'Assomption,QC,QC_0,QC_South
+2461,Joliette,QC,QC_0,QC_South
+2462,Matawinie,QC,QC_0,QC_South
+2463,Montcalm,QC,QC_0,QC_South
+2464,Les Moulins,QC,QC_0,QC_South
+2465,Laval,QC,QC_0,QC_South
+2466,Montréal,QC,QC_3,QC_South
+2467,Roussillon,QC,QC_3,QC_South
+2468,Les Jardins-de-Napierville,QC,QC_3,QC_South
+2469,Le Haut-Saint-Laurent,QC,QC_3,QC_South
+2470,Beauharnois-Salaberry,QC,QC_3,QC_South
+2471,Vaudreuil-Soulanges,QC,QC_3,QC_South
+2472,Deux-Montagnes,QC,QC_0,QC_South
+2473,Thérèse-De Blainville,QC,QC_0,QC_South
+2474,Mirabel,QC,QC_0,QC_South
+2475,La Rivière-du-Nord,QC,QC_0,QC_South
+2476,Argenteuil,QC,QC_0,QC_South
+2477,Les Pays-d'en-Haut,QC,QC_0,QC_South
+2478,Les Laurentides,QC,QC_0,QC_South
+2479,Antoine-Labelle,QC,QC_0,QC_South
+2480,Papineau,QC,QC_0,QC_South
+2481,Gatineau,QC,QC_0,QC_South
+2482,Les Collines-de-l'Outaouais,QC,QC_0,QC_South
+2483,La Vallée-de-la-Gatineau,QC,QC_0,QC_South
+2484,Pontiac,QC,QC_0,QC_South
+2485,Témiscamingue,QC,QC_6,QC_North
+2486,Rouyn-Noranda,QC,QC_6,QC_North
+2487,Abitibi-Ouest,QC,QC_6,QC_North
+2488,Abitibi,QC,QC_6,QC_North
+2489,La Vallée-de-l'Or,QC,QC_6,QC_North
+2490,La Tuque,QC,QC_7,QC_Central
+2491,Le Domaine-du-Roy,QC,QC_1,QC_Central
+2492,Maria-Chapdelaine,QC,QC_1,QC_Central
+2493,Lac-Saint-Jean-Est,QC,QC_1,QC_Central
+2494,Le Saguenay-et-son-Fjord,QC,QC_1,QC_Central
+2495,La Haute-Côte-Nord,QC,QC_1,QC_Central
+2496,Manicouagan,QC,QC_1,QC_Central
+2497,Sept-Rivières--Caniapiscau,QC,QC_1,QC_Central
+2498,Minganie--Le Golfe-du-Saint-Laurent,QC,QC_1,QC_Central
+2499,Nord-du-Québec,QC,QC_6,QC_North
+3501,"Stormont, Dundas and Glengarry",ON,ON_0,ON_East
+3502,Prescott and Russell,ON,ON_0,ON_East
+3506,Ottawa,ON,ON_0,ON_East
+3507,Leeds and Grenville,ON,ON_0,ON_East
+3509,Lanark,ON,ON_0,ON_East
+3510,Frontenac,ON,ON_0,ON_East
+3511,Lennox and Addington,ON,ON_0,ON_East
+3512,Hastings,ON,ON_0,ON_East
+3513,Prince Edward,ON,ON_0,ON_East
+3514,Northumberland,ON,ON_0,ON_East
+3515,Peterborough,ON,ON_0,ON_East
+3516,Kawartha Lakes,ON,ON_0,ON_East
+3518,Durham,ON,ON_0,ON_East
+3519,York,ON,ON_3,ON_East
+3520,Toronto,ON,ON_3,ON_Toronto
+3521,Peel,ON,ON_3,ON_South
+3522,Dufferin,ON,ON_4,ON_South
+3523,Wellington,ON,ON_2,ON_South
+3524,Halton,ON,ON_3,ON_South
+3525,Hamilton,ON,ON_3,ON_South
+3526,Niagara,ON,ON_3,ON_South
+3528,Haldimand-Norfolk,ON,ON_3,ON_South
+3529,Brant,ON,ON_3,ON_South
+3530,Waterloo,ON,ON_2,ON_South
+3531,Perth,ON,ON_2,ON_South
+3532,Oxford,ON,ON_2,ON_South
+3534,Elgin,ON,ON_2,ON_South
+3536,Chatham-Kent,ON,ON_2,ON_South
+3537,Essex,ON,ON_2,ON_South
+3538,Lambton,ON,ON_2,ON_South
+3539,Middlesex,ON,ON_2,ON_South
+3540,Huron,ON,ON_2,ON_South
+3541,Bruce,ON,ON_2,ON_South
+3542,Grey,ON,ON_4,ON_South
+3543,Simcoe,ON,ON_4,ON_East
+3544,Muskoka,ON,ON_4,ON_East
+3546,Haliburton,ON,ON_1,ON_East
+3547,Renfrew,ON,ON_1,ON_East
+3548,Nipissing,ON,ON_1,ON_North
+3549,Parry Sound,ON,ON_4,ON_North
+3551,Manitoulin,ON,ON_1,ON_North
+3552,Sudbury,ON,ON_1,ON_North
+3553,Greater Sudbury / Grand Sudbury,ON,ON_1,ON_North
+3554,Timiskaming,ON,ON_1,ON_North
+3556,Cochrane,ON,ON_1,ON_North
+3557,Algoma,ON,ON_1,ON_North
+3558,Thunder Bay,ON,ON_1,ON_Northwest
+3559,Rainy River,ON,ON_1,ON_Northwest
+3560,Kenora,ON,ON_1,ON_Northwest
+4601,Division No.  1,MB,MB_2,MB
+4602,Division No.  2,MB,MB_2,MB
+4603,Division No.  3,MB,MB_3,MB
+4604,Division No.  4,MB,MB_3,MB
+4605,Division No.  5,MB,MB_1,MB
+4606,Division No.  6,MB,MB_1,MB
+4607,Division No.  7,MB,MB_1,MB
+4608,Division No.  8,MB,MB_1,MB
+4609,Division No.  9,MB,MB_1,MB
+4610,Division No. 10,MB,MB_3,MB
+4611,Division No. 11,MB,MB_2,MB
+4612,Division No. 12,MB,MB_2,MB
+4613,Division No. 13,MB,MB_2,MB
+4614,Division No. 14,MB,MB_3,MB
+4615,Division No. 15,MB,MB_1,MB
+4616,Division No. 16,MB,MB_0,MB
+4617,Division No. 17,MB,MB_0,MB
+4618,Division No. 18,MB,MB_0,MB
+4619,Division No. 19,MB,MB_2,MB
+4620,Division No. 20,MB,MB_0,MB
+4621,Division No. 21,MB,MB_0,MB
+4622,Division No. 22,MB,MB_0,MB
+4623,Division No. 23,MB,MB_0,MB
+4701,Division No.  1,SK,SK_2,SK
+4702,Division No.  2,SK,SK_2,SK
+4703,Division No.  3,SK,SK_2,SK
+4704,Division No.  4,SK,SK_1,SK
+4705,Division No.  5,SK,SK_2,SK
+4706,Division No.  6,SK,SK_2,SK
+4707,Division No.  7,SK,SK_1,SK
+4708,Division No.  8,SK,SK_1,SK
+4709,Division No.  9,SK,SK_3,SK
+4710,Division No. 10,SK,SK_3,SK
+4711,Division No. 11,SK,SK_1,SK
+4712,Division No. 12,SK,SK_1,SK
+4713,Division No. 13,SK,SK_0,SK
+4714,Division No. 14,SK,SK_0,SK
+4715,Division No. 15,SK,SK_0,SK
+4716,Division No. 16,SK,SK_0,SK
+4717,Division No. 17,SK,SK_0,SK
+4718,Division No. 18,SK,SK_0,SK
+4801,Division No.  1,AB,AB_2,AB_South
+4802,Division No.  2,AB,AB_2,AB_South
+4803,Division No.  3,AB,AB_2,AB_South
+4804,Division No.  4,AB,AB_2,AB_South
+4805,Division No.  5,AB,AB_2,AB_South
+4806,Division No.  6,AB,AB_0,AB_South
+4807,Division No.  7,AB,AB_0,AB_Central
+4808,Division No.  8,AB,AB_0,AB_Central
+4809,Division No.  9,AB,AB_0,AB_Central
+4810,Division No. 10,AB,AB_0,AB_Central
+4811,Division No. 11,AB,AB_0,AB_Central
+4812,Division No. 12,AB,AB_1,AB_North
+4813,Division No. 13,AB,AB_1,AB_North
+4814,Division No. 14,AB,AB_3,AB_North
+4815,Division No. 15,AB,AB_3,AB_South
+4816,Division No. 16,AB,AB_1,AB_North
+4817,Division No. 17,AB,AB_1,AB_North
+4818,Division No. 18,AB,AB_1,AB_North
+4819,Division No. 19,AB,AB_1,AB_North
+5901,East Kootenay,BC,BC_1,BC_South
+5903,Central Kootenay,BC,BC_1,BC_South
+5905,Kootenay Boundary,BC,BC_1,BC_South
+5907,Okanagan-Similkameen,BC,BC_1,BC_South
+5909,Fraser Valley,BC,BC_3,BC_South
+5915,Greater Vancouver,BC,BC_3,BC_South
+5917,Capital,BC,BC_0,BC_South
+5919,Cowichan Valley,BC,BC_0,BC_South
+5921,Nanaimo,BC,BC_0,BC_South
+5923,Alberni-Clayoquot,BC,BC_0,BC_South
+5924,Strathcona,BC,BC_0,BC_South
+5926,Comox Valley,BC,BC_0,BC_South
+5927,Powell River,BC,BC_0,BC_South
+5929,Sunshine Coast,BC,BC_0,BC_South
+5931,Squamish-Lillooet,BC,BC_3,BC_South
+5933,Thompson-Nicola,BC,BC_3,BC_South
+5935,Central Okanagan,BC,BC_1,BC_South
+5937,North Okanagan,BC,BC_1,BC_South
+5939,Columbia-Shuswap,BC,BC_1,BC_South
+5941,Cariboo,BC,BC_2,BC_North
+5943,Mount Waddington,BC,BC_0,BC_South
+5947,Skeena-Queen Charlotte,BC,BC_2,BC_North
+5949,Kitimat-Stikine,BC,BC_2,BC_North
+5951,Bulkley-Nechako,BC,BC_2,BC_North
+5953,Fraser-Fort George,BC,BC_2,BC_North
+5955,Peace River,BC,BC_2,BC_North
+5959,Northern Rockies,BC,BC_4,BC_North
