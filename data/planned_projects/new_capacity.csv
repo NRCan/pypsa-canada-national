@@ -1,0 +1,36 @@
+﻿generation_unit_name,province,gen_type,unit_installed_capacity,build_year,latitude,longitude
+Wocawson,NB,wind_ons,25,2025,45.80284,-65.25253
+Paqt'smawei_Spiu_wind,NB,wind_ons,105,2027,45.71998,-65.23145
+Tantramar_NG,NB,gas_CT,500,2028,46.03849,-64.26633
+Salmon_river_wind,NB,wind_ons,240,2030,45.54749,-65.5089
+Brighton_Mountain_wind,NB,wind_ons,200,2027,46.42209,-67.24761
+Astuwicuwon_wind,NB,wind_ons,92,2028,46.58347,-67.4164
+Papoqji'ig_wind,NB,wind_ons,63,2028,47.56764,-66.26375
+Belledune_conversion,NB,default_biomass,467,2030,47.908131,-65.862179
+Port_Hawkesbury_wind,NS,wind_ons,168,2026,45.39047,-61.50009
+Weavers_Mountain_wind,NS,wind_ons,94.4,2026,45.55039,-62.09971
+Aulds_Cove_wind,NS,wind_ons,147,2027,45.39047,-61.50009
+Marshdale Peaker,NS,gas_CT,300,2029,45.443953,-62.739743
+Eiggs_Mountain_wind,NS,wind_ons,150,2028,45.69748,-62.12195
+Point_Tupper_Conversion,NS,gas_CT,150,2028,45.586966,-61.347414
+Sugar_Maple_wind,NS,wind_ons,112,2028,45.49755,-62.18188
+Lingan_Conversion,NS,default_oil,459,2029,46.235724,-60.039049
+Salt Springs Peaker,NS,gas_CT,300,2029,45.53853,-62.898587
+Mersey_River_1_wind,NS,wind_ons,90,2026,44.08452,-64.78776
+Minas_Highlands_wind,NS,wind_ons,13,2026,44.93332,-64.30106
+Wedgeport_wind,NS,wind_ons,80,2026,43.73375,-66.01288
+Mersey_River_2_wind,NS,wind_ons,59,2027,44.08452,-64.78776
+Bedeque_solar,PE,solar_PV,140,2026,46.33703,-63.7216
+Bedeque_wind,PE,wind_ons,13,2026,46.33703,-63.7216
+Wejipek_wind,PE,wind_ons,18,2027,46.32512,-63.64448
+Skinners_pond_wind,PE,wind_ons,99,2028,46.96459,-64.11668
+Des Neiges Charlevoix,QC,wind_ons,400,2028,47.23741,-70.74419
+Des Neiges Ouest,QC,wind_ons,400,2028,47.14492,-71.16546
+Peshu Napeu,QC,wind_ons,300,2029,49.79952,-68.82789
+Saint-Paul-de-Montiminy,QC,wind_ons,196,2027,46.80128,-70.35005
+Lotbiniere Ndakina,QC,wind_ons,100,2028,46.5818,-71.7866
+Pohenegamook-Picard-Satint-Antonin-Wolastokuk 2,QC,wind_ons,291,2029,47.73736,-69.20319
+Arthabaska,QC,wind_ons,265.2,2029,45.92729,-72.18378
+Broughton,QC,wind_ons,150,2029,46.23809,-71.17785
+Monnoir,QC,wind_ons,100,2027,45.3716,-73.0548
+Les Jardins,QC,wind_ons,147,2028,45.17501,-73.55717
