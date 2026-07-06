@@ -56,14 +56,15 @@ components:
     "2030": 170
 
 snapshots:
-  method: "Carpe_diem"
+  #method: "OPT_VRE_HYDRO", "KMEDOID_VRE_HYDRO", "CARPE_DIEM", "AVG_PEAK" or "ALL_DAYS"
+  method: "CARPE_DIEM"
   load_mode: *load_mode
   folder_name: "model/national_model"
   last_investment_period: 5 #duration in years
 
   # Rep days config
   # rep_length: None
-  cluster: 364
+  cluster: 60
   include_hydro: true
   solver: *solver_name
   extreme_days_select: false
