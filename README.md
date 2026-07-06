@@ -32,7 +32,7 @@ The workflow involves:
 ### Environment
 The notebooks in the 'PyPSA-Canada-National' repo are compatible with the [pypsa_canada](https://github.com/NRCan/pypsa-canada) python enivronment. Create a new environment and install the required packages by:
 
-1. Create the virtual environment with either Conda or Python with Python 3.11
+1. Create the virtual environment with either Conda or Python with Python 3.12
 
 1-a) **For Anaconda/Miniconda users only, create a virtual environment with the following command:
 ```bash
@@ -52,7 +52,7 @@ $(base) python -m venv pypsa_cad_p312
 3. Install the package/library:
 
 ```bash
-(pypsa-cad_py312)  >> pip install -e .[dev]
+(pypsa_cad_py312)  >> pip install -e .[dev]
 ```
 
 #### PyArrow
