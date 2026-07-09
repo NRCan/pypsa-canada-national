@@ -1,4 +1,4 @@
-﻿generation_unit_name,province,gen_type,unit_installed_capacity,build_year,latitude,longitude
+﻿name,province,model,p_nom,build_year,latitude,longitude
 Wocawson,NB,wind_ons,25,2025,45.80284,-65.25253
 Paqt'smawei_Spiu_wind,NB,wind_ons,105,2027,45.71998,-65.23145
 Tantramar_NG,NB,gas_CT,500,2028,46.03849,-64.26633
@@ -34,3 +34,20 @@ Arthabaska,QC,wind_ons,265.2,2029,45.92729,-72.18378
 Broughton,QC,wind_ons,150,2029,46.23809,-71.17785
 Monnoir,QC,wind_ons,100,2027,45.3716,-73.0548
 Les Jardins,QC,wind_ons,147,2028,45.17501,-73.55717
+Bolton Manor Rural Power Resiliency Project,ON,default_biogas,0.95,2028,43.1004,-81.027985
+Napanee Generating Station Expansion,ON,gas_CT,405,2028,44.148984,-76.839968
+Walker Dairy Rural Power Resiliency,ON,gas_CT,4.74,2028,42.777457,-80.876322
+Darlington SMR Unit 1,ON,default_SMR,300,2029,43.871041,-78.720456
+Dunns Valley Solar,ON,solar_PV,200,2030,46.481711,-83.566913
+CarbonFree Fort Frances,ON,solar_PV,167.2,2030,48.674323,-93.552646
+CarbonFree Kynoch,ON,solar_PV,154,2030,46.448967,-83.269548
+Massey Solar,ON,solar_PV,141.25,2030,46.272593,-81.997366
+CarbonFree Rainy River,ON,solar_PV,60,2030,48.725601,-93.898724
+Fort Frances Solar,ON,solar_PV,57.2,2030,48.627132,-93.417255
+Paradis Bay Solar,ON,solar_PV,50,2030,47.321542,-79.54651
+Timmins Mountjoy Solar Project,ON,solar_PV,23.94,2030,48.463253,-81.363066
+Elmbrook Agrivoltaics,ON,solar_PV,19.2,2030,44.074363,-77.121181
+Cedar Agrivoltaics,ON,solar_PV,17.6,2030,44.156306,-80.963721
+Chatsworth Solar Project,ON,solar_PV,15.75,2030,44.466528,-80.913586
+Golden Leaf Agrivoltaics,ON,solar_PV,9,2030,44.921197,-76.188697
+Northern Breeze Wind Project,ON,wind_ons,200,2029,48.693479,-89.182483

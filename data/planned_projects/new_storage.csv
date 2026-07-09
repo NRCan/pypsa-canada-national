@@ -1,0 +1,14 @@
+﻿name,province,model,p_nom,build_year,max_hours,latitude,longitude
+Almonte BESS 2,ON,default_liion_battery,9.49,2028,4,45.188444,-76.164404
+Eagle Lake Power Reserve,ON,default_liion_battery,190,2030,8,49.732066,-93.054707
+Edgeware Battery Storage Project,ON,default_liion_battery,71.25,2028,4,42.798841,-81.150523
+Elora BESS,ON,default_liion_battery,200,2028,4,43.685373,-80.362922
+Hedley BESS,ON,default_liion_battery,200,2028,4,42.91296,-80.088714
+Napanee Battery Energy Storage System Phase 2,ON,default_liion_battery,300,2030,8,44.153745,-76.840714
+North Glengarry BESS,ON,default_liion_battery,15.48,2028,4,45.376574,-74.845265
+Oxford Battery Energy Storage Project,ON,default_liion_battery,118,2028,4,43.103021,-80.761095
+Simcoe Battery Project,ON,default_liion_battery,150,2030,8,42.852249,-80.299611
+Skyview 2 Battery Energy Storage Project,ON,default_liion_battery,390,2028,4,44.930687,-75.471357
+South March BESS,ON,default_liion_battery,250,2028,4,45.398881,-76.040812
+Tara BESS,ON,default_liion_battery,380,2027,4,44.449394,-81.110245
+Trail Road BESS,ON,default_liion_battery,150,2028,4,45.218118,-75.744464
