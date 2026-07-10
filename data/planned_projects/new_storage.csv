@@ -17,3 +17,4 @@ P2553 Dolcy MPC Solar and Storage,AB,default_liion_battery,100,2029,4,52.566876,
 P2747 Vegreville 709S DER Battery,AB,default_liion_battery,10,2027,4,53.492653,-112.044246
 P2924 Three Hills 770S DER Battery,AB,default_liion_battery,10.1,2027,4,51.707033,-113.264832
 P2925 Michichi Creek 802S DER Battery,AB,default_liion_battery,11,2027,4,51.502933,-112.704556
+Revelstoke Unit 6,BC,hydro_monthly,500,2032,744,51.048563,-118.193945

@@ -86,3 +86,28 @@ P2792 Cascade Gas Expansion,AB,gas_CT,32,2025,53.525464,-116.598156
 P2805 High River 65S DER Gas,AB,gas_CT,16,2026,50.576438,-113.870377
 P2827 Vilna 777S DER Solar,AB,solar_PV,27,2029,54.122625,-111.960216
 P2829 Coronation 773S DER Solar,AB,solar_PV,17,2027,52.054165,-111.439644
+Boundary Dam 3 Life Extension,SK,coal_pulverized,139,2034,49.096031,-103.030509
+Boundary Dam 4 Life Extension,SK,coal_pulverized,139,2036,49.096031,-103.030509
+Boundary Dam 5 Life Extension Phase 1,SK,coal_pulverized,139,2028,49.096031,-103.030509
+Boundary Dam 5 Life Extension Phase 2,SK,coal_pulverized,139,2036,49.096031,-103.030509
+Boundary Dam 6 Life Extension,SK,coal_pulverized,284,2030,49.096031,-103.030509
+Shand Life Extension,SK,coal_pulverized,276,2032,49.088261,-102.864193
+Poplar River 1 Life Extension,SK,coal_pulverized,291,2033,49.057881,-105.484825
+Poplar River 2 Life Extension,SK,coal_pulverized,291,2031,49.057881,-105.484825
+Yayus Energy,BC,wind_ons,197,2030,50.046572,-125.746851
+Boulder and Ekhart Wind,BC,wind_ons,94,2028,49.901982,-120.373621
+Highland Valley Wind,BC,wind_ons,197,2030,50.504307,-120.993297
+K2 Wind Project,BC,wind_ons,160,2031,49.886569,-120.167609
+ShTSaQU Solar,BC,solar_PV,104,2030,50.560632,-120.846754
+Mount Mabel Wind,BC,wind_ons,143,2030,50.322796,-120.575399
+Nihts'i Ecoener,BC,wind_ons,140,2031,53.418612,-122.556538
+Nithi Mountain Wind,BC,wind_ons,200,2029,53.976467,-124.853238
+Stewart Creek Wind,BC,wind_ons,200,2030,55.961691,-121.078936
+Taylor Wind,BC,wind_ons,200,2031,56.041502,-120.854241
+Bessie Wind,BC,wind_ons,251,2032,55.92088,-120.349409
+Nicola Wind,BC,wind_ons,496,2032,49.955678,-119.952088
+Sweetwater Wind,BC,wind_ons,210,2033,56.002674,-120.48096
+Taylor South Wind,BC,wind_ons,201,2032,55.963101,-121.103716
+Brandon Additional Turbines,MB,gas_CT,750,2030,49.845591,-99.890104
+Bay d'Espoir Unit 8,NL,hydro_monthly,150,2031,47.99014,-55.799735
+Avalon CT,NL,gas_CT,150,2030,47.453064,-53.097652
