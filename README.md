@@ -30,7 +30,7 @@ The workflow involves:
 
 ## Installation
 ### Environment
-The notebooks in the 'PyPSA-Canada-National' repo are compatible with the [pypsa_canada](https://github.com/NRCan/pypsa-canada) python enivronment. Create a new environment and install the required packages by:
+The notebooks in the 'PyPSA-Canada-National' repo are compatible with the [pypsa_canada](https://github.com/NRCan/pypsa-canada) python environment. Create a new environment and install the required packages by:
 
 1. Create the virtual environment with either Conda or Python with Python 3.12
 
