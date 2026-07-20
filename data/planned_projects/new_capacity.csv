@@ -20,7 +20,7 @@ Sugar_Maple_wind,NS,wind_ons,112,2028,45.49755,-62.18188
 Marshdale Peaker,NS,gas_CT,300,2029,45.443953,-62.739743
 Lingan_Conversion,NS,default_oil,459,2029,46.235724,-60.039049
 Salt Springs Peaker,NS,gas_CT,300,2029,45.53853,-62.898587
-Bedeque_solar,PE,default_solar_PV,140,2026,46.33703,-63.7216
+Bedeque_solar,PE,solar_PV,140,2026,46.33703,-63.7216
 Bedeque_wind,PE,wind_ons,13,2026,46.33703,-63.7216
 Wejipek_wind,PE,wind_ons,18,2027,46.32512,-63.64448
 Skinners_pond_wind,PE,wind_ons,99,2028,46.96459,-64.11668
@@ -38,54 +38,54 @@ Bolton Manor Rural Power Resiliency Project,ON,default_biogas,0.95,2028,43.1004,
 Napanee Generating Station Expansion,ON,gas_CT,405,2028,44.148984,-76.839968
 Walker Dairy Rural Power Resiliency,ON,gas_CT,4.74,2028,42.777457,-80.876322
 Darlington SMR Unit 1,ON,default_SMR,300,2029,43.871041,-78.720456
-Dunns Valley Solar,ON,default_solar_PV,200,2030,46.481711,-83.566913
-CarbonFree Fort Frances,ON,default_solar_PV,167.2,2030,48.674323,-93.552646
-CarbonFree Kynoch,ON,default_solar_PV,154,2030,46.448967,-83.269548
-Massey Solar,ON,default_solar_PV,141.25,2030,46.272593,-81.997366
-CarbonFree Rainy River,ON,default_solar_PV,60,2030,48.725601,-93.898724
-Fort Frances Solar,ON,default_solar_PV,57.2,2030,48.627132,-93.417255
-Paradis Bay Solar,ON,default_solar_PV,50,2030,47.321542,-79.54651
-Timmins Mountjoy Solar Project,ON,default_solar_PV,23.94,2030,48.463253,-81.363066
-Elmbrook Agrivoltaics,ON,default_solar_PV,19.2,2030,44.074363,-77.121181
-Cedar Agrivoltaics,ON,default_solar_PV,17.6,2030,44.156306,-80.963721
-Chatsworth Solar Project,ON,default_solar_PV,15.75,2030,44.466528,-80.913586
-Golden Leaf Agrivoltaics,ON,default_solar_PV,9,2030,44.921197,-76.188697
+Dunns Valley Solar,ON,solar_PV,200,2030,46.481711,-83.566913
+CarbonFree Fort Frances,ON,solar_PV,167.2,2030,48.674323,-93.552646
+CarbonFree Kynoch,ON,solar_PV,154,2030,46.448967,-83.269548
+Massey Solar,ON,solar_PV,141.25,2030,46.272593,-81.997366
+CarbonFree Rainy River,ON,solar_PV,60,2030,48.725601,-93.898724
+Fort Frances Solar,ON,solar_PV,57.2,2030,48.627132,-93.417255
+Paradis Bay Solar,ON,solar_PV,50,2030,47.321542,-79.54651
+Timmins Mountjoy Solar Project,ON,solar_PV,23.94,2030,48.463253,-81.363066
+Elmbrook Agrivoltaics,ON,solar_PV,19.2,2030,44.074363,-77.121181
+Cedar Agrivoltaics,ON,solar_PV,17.6,2030,44.156306,-80.963721
+Chatsworth Solar Project,ON,solar_PV,15.75,2030,44.466528,-80.913586
+Golden Leaf Agrivoltaics,ON,solar_PV,9,2030,44.921197,-76.188697
 Northern Breeze Wind Project,ON,wind_ons,200,2029,48.693479,-89.182483
-P1828 hep Energy Alderson MPC Solar,AB,default_solar_PV,100,2026,50.357066,-111.355867
+P1828 hep Energy Alderson MPC Solar,AB,solar_PV,100,2026,50.357066,-111.355867
 P2034 Cold Lake Energy (Lindbergh Cogeneration),AB,gas_CT,72,2029,54.039096,-110.618281
-P2091 Arenosum Solar,AB,default_solar_PV,150,2028,50.689614,-110.05216
+P2091 Arenosum Solar,AB,solar_PV,150,2028,50.689614,-110.05216
 P2192 ENMAX FMC Change,AB,gas_CT,5,2026,51.065199,-114.133418
-P2195 FortisAlberta Bassano 435S DER Solar,AB,default_solar_PV,5,2027,50.674576,-112.312332
-P2259 FortisAlberta Metiskow 648S DER Solar,AB,default_solar_PV,22,2030,52.4071,-110.497
-P2292 FortisAlberta Killarney Lake 267S DER Solar,AB,default_solar_PV,18,2026,52.618502,-110.265373
+P2195 FortisAlberta Bassano 435S DER Solar,AB,solar_PV,5,2027,50.674576,-112.312332
+P2259 FortisAlberta Metiskow 648S DER Solar,AB,solar_PV,22,2030,52.4071,-110.497
+P2292 FortisAlberta Killarney Lake 267S DER Solar,AB,solar_PV,18,2026,52.618502,-110.265373
 P2356 Oyen Wind,AB,wind_ons,250,2027,51.310956,-110.491412
-P2369 ATCO Anderson 801S DER Solar,AB,default_solar_PV,12,2027,51.516598,-111.667832
-P2378 RESC Nova MPC Solar,AB,default_solar_PV,150,2027,50.847315,-113.538316
-P2396 Georgetown Solar,AB,default_solar_PV,230,2026,50.739327,-113.417692
-P2411 Northland Power Jurassic MPC Solar Battery,AB,default_solar_PV,220,2028,50.730383,-111.344279
-P2418 Greencells Estuary Solar,AB,default_solar_PV,200,2028,50.703197,-110.026844
-P2445 Homestead MPC Solar,AB,default_solar_PV,400,2027,49.98931,-113.436732
+P2369 ATCO Anderson 801S DER Solar,AB,solar_PV,12,2027,51.516598,-111.667832
+P2378 RESC Nova MPC Solar,AB,solar_PV,150,2027,50.847315,-113.538316
+P2396 Georgetown Solar,AB,solar_PV,230,2026,50.739327,-113.417692
+P2411 Northland Power Jurassic MPC Solar Battery,AB,solar_PV,220,2028,50.730383,-111.344279
+P2418 Greencells Estuary Solar,AB,solar_PV,200,2028,50.703197,-110.026844
+P2445 Homestead MPC Solar,AB,solar_PV,400,2027,49.98931,-113.436732
 P2453 EDTI Edmonton 3 H2 Plant Cogen,AB,gas_CT,20,2027,53.591667,-113.298278
 P2454 Flipi MPC Gas,AB,gas_CC,466,2029,52.620701,-114.533452
 P2456 Opal Gas,AB,gas_CT,99,2027,54.43949,-117.015453
-P2457 Fortis Moon Lake DER Solar,AB,default_solar_PV,17,2026,53.424334,-114.985753
-P2461 Aira Solar,AB,default_solar_PV,450,2027,49.596942,-110.947719
-P2462 Fortis Stony Plain 434S DER Solar,AB,default_solar_PV,12,2026,53.515697,-113.911102
-P2464 Sunnynook Solar Battery,AB,default_solar_PV,280,2029,51.327898,-111.563189
-P2465 Enerfin Winnifred Wind + Solar Modification,AB,default_solar_PV,60,2026,55.30032,-119.17956
+P2457 Fortis Moon Lake DER Solar,AB,solar_PV,17,2026,53.424334,-114.985753
+P2461 Aira Solar,AB,solar_PV,450,2027,49.596942,-110.947719
+P2462 Fortis Stony Plain 434S DER Solar,AB,solar_PV,12,2026,53.515697,-113.911102
+P2464 Sunnynook Solar Battery,AB,solar_PV,280,2029,51.327898,-111.563189
+P2465 Enerfin Winnifred Wind + Solar Modification,AB,solar_PV,60,2026,55.30032,-119.17956
 P2467 Pteragen Peace Butte Wind,AB,wind_ons,120,2028,49.81199,-110.738211
-P2471 Fortis Buford 538S DER Solar,AB,default_solar_PV,12.9,2026,53.236344,-113.938476
-P2524 Shell SR Scotford Solar,AB,default_solar_PV,58,2028,53.812841,-113.078536
-P2537 Fortis Duchess 339S DER Solar,AB,default_solar_PV,19.8,2025,50.728219,-111.916664
-P2553 Dolcy MPC Solar and Storage,AB,default_solar_PV,300,2029,52.566876,-110.580957
-P2627 Sundre 575S DER Solar,AB,default_solar_PV,13,2027,52.094497,-114.756278
+P2471 Fortis Buford 538S DER Solar,AB,solar_PV,12.9,2026,53.236344,-113.938476
+P2524 Shell SR Scotford Solar,AB,solar_PV,58,2028,53.812841,-113.078536
+P2537 Fortis Duchess 339S DER Solar,AB,solar_PV,19.8,2025,50.728219,-111.916664
+P2553 Dolcy MPC Solar and Storage,AB,solar_PV,300,2029,52.566876,-110.580957
+P2627 Sundre 575S DER Solar,AB,solar_PV,13,2027,52.094497,-114.756278
 P2658 Rimbey 297S DER Gas,AB,gas_CT,15.5,2026,52.757527,-114.107726
 P2676 Kaybob South 3 Cogen,AB,gas_CT,25,2026,54.09717,-116.618866
 P2678 SS-37 DER Gas,AB,gas_CT,1.1,2027,51.050523,-114.013052
 P2792 Cascade Gas Expansion,AB,gas_CT,32,2025,53.525464,-116.598156
 P2805 High River 65S DER Gas,AB,gas_CT,16,2026,50.576438,-113.870377
-P2827 Vilna 777S DER Solar,AB,default_solar_PV,27,2029,54.122625,-111.960216
-P2829 Coronation 773S DER Solar,AB,default_solar_PV,17,2027,52.054165,-111.439644
+P2827 Vilna 777S DER Solar,AB,solar_PV,27,2029,54.122625,-111.960216
+P2829 Coronation 773S DER Solar,AB,solar_PV,17,2027,52.054165,-111.439644
 Boundary Dam 3 Life Extension,SK,coal_pulverized,139,2034,49.096031,-103.030509
 Boundary Dam 4 Life Extension,SK,coal_pulverized,139,2036,49.096031,-103.030509
 Boundary Dam 5 Life Extension Phase 1,SK,coal_pulverized,139,2028,49.096031,-103.030509
@@ -98,7 +98,7 @@ Yayus Energy,BC,wind_ons,197,2030,50.046572,-125.746851
 Boulder and Ekhart Wind,BC,wind_ons,94,2028,49.901982,-120.373621
 Highland Valley Wind,BC,wind_ons,197,2030,50.504307,-120.993297
 K2 Wind Project,BC,wind_ons,160,2031,49.886569,-120.167609
-ShTSaQU Solar,BC,default_solar_PV,104,2030,50.560632,-120.846754
+ShTSaQU Solar,BC,solar_PV,104,2030,50.560632,-120.846754
 Mount Mabel Wind,BC,wind_ons,143,2030,50.322796,-120.575399
 Nihts'i Ecoener,BC,wind_ons,140,2031,53.418612,-122.556538
 Nithi Mountain Wind,BC,wind_ons,200,2029,53.976467,-124.853238
@@ -112,4 +112,4 @@ Brandon Additional Turbines,MB,gas_CT,750,2030,49.845591,-99.890104
 Bay d'Espoir Unit 8,NL,hydro_monthly,150,2031,47.99014,-55.799735
 Avalon CT,NL,gas_CT,150,2030,47.453064,-53.097652
 Saint Johns Westside Mill,NB,default_biomass,145,2028,45.25891,-66.094518
-Cookville Solar,NB,default_solar_PV,150,2029,46.022388,-64.492335
+Cookville Solar,NB,solar_PV,150,2029,46.022388,-64.492335
