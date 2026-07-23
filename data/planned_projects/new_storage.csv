@@ -1,0 +1,20 @@
+﻿name,province,model,p_nom,build_year,max_hours,latitude,longitude
+Almonte BESS 2,ON,default_liion_battery,9.49,2028,4,45.188444,-76.164404
+Edgeware Battery Storage Project,ON,default_liion_battery,71.25,2028,4,42.798841,-81.150523
+Elora BESS,ON,default_liion_battery,200,2028,4,43.685373,-80.362922
+Hedley BESS,ON,default_liion_battery,200,2028,4,42.91296,-80.088714
+North Glengarry BESS,ON,default_liion_battery,15.48,2028,4,45.376574,-74.845265
+Oxford Battery Energy Storage Project,ON,default_liion_battery,118,2028,4,43.103021,-80.761095
+Skyview 2 Battery Energy Storage Project,ON,default_liion_battery,390,2028,4,44.930687,-75.471357
+South March BESS,ON,default_liion_battery,250,2028,4,45.398881,-76.040812
+Tara BESS,ON,default_liion_battery,380,2027,4,44.449394,-81.110245
+Trail Road BESS,ON,default_liion_battery,150,2028,4,45.218118,-75.744464
+P2334 TCE Saddlebrook Solar Storage,AB,default_liion_battery,5,2027,8,50.654605,-113.87147
+P2411 Northland Power Jurassic MPC Solar Battery,AB,default_liion_battery,80,2026,2,50.730383,-111.344279
+P2451 Georgetown Battery Addition,AB,default_liion_battery,100,2027,4,50.739327,-113.417692
+P2464 Sunnynook Solar Battery,AB,default_liion_battery,100,2029,4,51.327898,-111.563189
+P2553 Dolcy MPC Solar and Storage,AB,default_liion_battery,100,2029,4,52.566876,-110.580957
+P2747 Vegreville 709S DER Battery,AB,default_liion_battery,10,2027,4,53.492653,-112.044246
+P2924 Three Hills 770S DER Battery,AB,default_liion_battery,10.1,2027,4,51.707033,-113.264832
+P2925 Michichi Creek 802S DER Battery,AB,default_liion_battery,11,2027,4,51.502933,-112.704556
+Revelstoke Unit 6,BC,hydro_monthly,500,2032,744,51.048563,-118.193945
