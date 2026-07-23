@@ -12,7 +12,7 @@ default_nuclear,nuclear,FALSE,30,0.33
 default_SMR,nuclear,FALSE,30,0.37
 default_oil,oil,FALSE,40,0.3
 default_solar_PV,solar,FALSE,30,1
-wind_2021,wind,FALSE,25,0.82
+wind_2021,wind,FALSE,25,0.86
 wind_new,wind,FALSE,30,0.86
 wind_offshore_fixed,wind_offshore,FALSE,30,1
 wind_offshore_floating,wind_offshore,FALSE,30,1
