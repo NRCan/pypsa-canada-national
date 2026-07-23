@@ -19,7 +19,7 @@ solving:
   options:
     planning:
       include_objective_constant : true
-      load_shedding: false
+      load_shedding: true
       linearized_unit_commitment: false
       keep_files: false
       store_model: false
@@ -42,7 +42,7 @@ solving:
 
 load:
   load_mode: &load_mode "full_load"
-  load_growth_forecast: "model/national_model/loads_forecast_CNZ.csv"
+  load_growth_forecast: "model/national_model/loads_forecast_CM.csv"
 
 components:
   override_dir: ""
