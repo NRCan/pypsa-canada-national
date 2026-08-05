@@ -81,47 +81,6 @@ extra_loads:
   extra_loads: data/base
   path: data/base
 
-planning:
-  constraints:
-    add_bidirection_link:
-      enable: false
-    add_stop_production:
-      enable: false
-    CER_constraint:
-      enable: false
-      # aggregation levels: provincial, group, individual
-      aggregation: 'provincial'
-      # year that constraint becomes active
-      year: 2035
-      # carriers to include
-      carriers: ['oil', 'gas', 'diesel']
-      # values for emissions limit and offset is emission intensity (in tC02eq/GWh)
-      values: {
-        limit: {2035: 65, 2050: 0},
-        offset: {2035: 35, 2050: 42}
-        }
-      # minimum capacity
-      min_cap: 25
-    NZ_constraint:
-      enable: false
-    planning_reserve_margin:
-      enable: false
-      capacity_values_placeholder_filepath: "data/constraints/capacity_values_placeholder.csv"
-      # provinces_list:
-      #   "PE": 1.2
-      #   "NB": 1.2
-      #   "NS": 1.2
-      #   "AB": 1.2
-      #   "BC": 1.2
-      #   "MB": 1.2
-      #   "ON": 1.2
-      #   "QC": 1.2
-      #   "SK": 1.2
-      #   "NL": 1.2
-    component_capacity_expansion_constraint:
-      enable: false
-      # custom_constraint_filepath: ""
-
 dispatch:
   #Snapshots related
   horizon: 8760 #336 #2 weeks in hours
@@ -158,6 +117,10 @@ dispatch:
       min_cap: 25
       # forecast hours based on net load ('load'), uniformly ('uniform'), or assign max to first UC period and carry leftover ('carryover')
       forecast_hours: 'carryover'
+
+  custom_constraints:
+    enabled: false
+    module_path: null
 
 postprocess:
   result_type: "Provincial"  # "Provincial" or "Nodal"
