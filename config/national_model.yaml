@@ -19,12 +19,18 @@ solving:
   options:
     planning:
       include_objective_constant : true
+      enable_committable: false
+      enable_p_min_pu: false
+      enable_ramp_rates: false
       load_shedding: true
       linearized_unit_commitment: false
       keep_files: false
       store_model: false
     dispatch:
       include_objective_constant : true
+      enable_committable: false
+      enable_p_min_pu: false
+      enable_ramp_rates: false
       load_shedding: true
       linearized_unit_commitment: false
       keep_files: false
