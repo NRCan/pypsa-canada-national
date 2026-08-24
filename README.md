@@ -1,4 +1,6 @@
-# PyPSA-Canada-National
+# <a id="english"></a>PyPSA-Canada-National
+
+[English](#english) | [Français](#french)
 
 ## Keywords
 Python, Power Systems
@@ -86,4 +88,97 @@ Copyright CanmetENERGY - Varennes, NRCan, Goverment of Canada
 * Serban Ivanescu (serban.ivanescu@nrcan-rncan.gc.ca)
 
 ## Getting Further Information
+https://docs.pypsa.org/latest/
+
+---
+
+# <a id="french"></a>PyPSA-Canada-National (Français)
+
+[English](#english) | [Français](#french)
+
+## Mots-clés
+Python, Systèmes électriques
+
+## Description du projet
+`PyPSA-Canada-National` est un modèle open source de système électrique pour les 10 provinces du Canada. Il est conçu pour être utilisé avec la bibliothèque [pypsa_canada](https://github.com/NRCan/pypsa-canada). Le modèle utilise diverses sources de données pour construire un modèle agrégé du réseau électrique canadien à grande échelle, destiné aux modèles de planification et d'expansion des capacités.
+
+**Fonctionnalités clés :**
+- **Pipeline de données activé par API** : Récupère automatiquement toutes les données requises à l'aide d'appels API
+- **Format notebook Jupyter** : Permet des modifications et de l'expérimentation à chaque étape de création du modèle
+
+## Utilisation
+
+### Vue d'ensemble
+`PyPSA-Canada-National` fournit une série de notebooks Jupyter conçus pour guider l'utilisateur à travers les étapes de création du modèle. Ces scripts doivent être exécutés dans l'ordre afin de générer les fichiers d'entrée finaux au format pypsa requis pour le workflow pypsa_canada.
+
+### Workflow de base
+Le workflow comprend :
+1. **Pré-traitement** : charger les données requises et construire les fichiers de données initiaux utilisés aux étapes suivantes
+2. **Clustering du réseau** : agréger les données spatiales en régions de modèle
+3. **Modélisation ENR, distances de lignes et charges** : alimenter le modèle avec les charges, les actifs de production et les corridors de transmission
+4. **Create Model** : formater les données en fichiers `.csv` lisibles par pypsa
+
+### Organisation des données
+- `data/` : les données d'entrée récupérées depuis les sources d'origine y sont enregistrées
+- `config/` : fichiers de configuration YAML définissant les scénarios de modèle
+- `results/` : résultats intermédiaires de la création du modèle, ainsi que les résultats des exécutions du modèle
+
+## Installation
+### Environnement
+Les notebooks du dépôt 'PyPSA-Canada-National' sont compatibles avec l'environnement Python [pypsa_canada](https://github.com/NRCan/pypsa-canada). Créez un nouvel environnement puis installez les packages requis :
+
+1. Créez l'environnement virtuel avec Conda ou Python 3.12
+
+1-a) **Pour les utilisateurs Anaconda/Miniconda uniquement, créez un environnement virtuel avec la commande suivante :
+```bash
+$(base) conda create --name pypsa_cad_p312 python=3.12.10
+```
+
+1-b) **Pour les utilisateurs Python uniquement, en supposant que Python 3.12 est installé, exécutez la commande suivante pour créer un nouvel environnement virtuel :
+```bash
+$(base) python -m venv pypsa_cad_p312
+```
+1-b) Poursuivez en activant l'environnement
+
+2. Entrez dans le dossier pypsa_canada
+```bash
+(env)  >> cd [PROJECT_DIR]
+```
+3. Installez le package/la bibliothèque :
+
+```bash
+(pypsa_cad_py312)  >> pip install -e .[dev]
+```
+
+#### PyArrow
+Notez qu'en raison d'un conflit entre la bibliothèque PyPAS-Canada et le modèle national, le package PyArrow doit être installé manuellement avant d'exécuter les notebooks. Le notebook "4-Create Model" désinstalle automatiquement PyArrow lors de son exécution. Ce problème sera corrigé dans de futurs correctifs.
+
+## Exécution des notebooks
+Les étapes pour construire le modèle 'PyPSA-Canada-National' sont fournies dans une série de notebooks Jupyter. Les cellules individuelles de chaque notebook peuvent être exécutées avec un environnement de développement compatible, tel que VSCode, ou le notebook entier peut être exécuté en tant que script Python.
+
+## Sources de données
+La plupart des données utilisées dans 'PyPSA-Canada-National' proviennent de la base de données [CODERS](https://cme-emh.ca/en/coders/). L'accès à ces données nécessite un compte et une clé API. Une fois la clé API obtenue, créez un fichier texte dans le dossier data nommé "api_key.txt" et collez-y la clé API.
+
+## Licence
+Licence MIT PyPSA : https://github.com/PyPSA/PyPSA/blob/master/LICENSE.txt
+Licence pypsa-eur : https://github.com/PyPSA/pypsa-eur/tree/master/LICENSES
+
+## Droits
+Copyright CanmetENERGY - Varennes, RNCan, Gouvernement du Canada
+
+## Auteurs
+* Steven Wong (Ressources naturelles Canada - CanmetENERGY)
+* Nathan De Matos (Ressources naturelles Canada - CanmetENERGY)
+* Michel Bui (Ressources naturelles Canada - CanmetENERGY)
+* Adrien Prigent (Ressources naturelles Canada - CanmetENERGY)
+* Serban Ivanescu (Ressources naturelles Canada - CanmetENERGY)
+
+## Informations de contact
+* Steven Wong (steven.wong@nrcan-rncan.gc.ca)
+* Nathan De Matos (nathan.dematos@nrcan-rncan.gc.ca)
+* Adrien Prigent (adrien.prigent@nrcan-rncan.gc.ca)
+* Michel Bui (michel.bui@nrcan-rncan.gc.ca)
+* Serban Ivanescu (serban.ivanescu@nrcan-rncan.gc.ca)
+
+## Informations complémentaires
 https://docs.pypsa.org/latest/
