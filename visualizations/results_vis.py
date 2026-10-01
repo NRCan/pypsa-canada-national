@@ -18,13 +18,13 @@ class canada_visualizations():
 
         # Read data
         zones = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'clustered_zone_data.feather')).reset_index()
-        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG: 4326').rename(columns={'index':'cluster'})
+        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG:4326').rename(columns={'index':'cluster'})
         lines = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'cluster_interfaces.feather'))
-        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG: 4326')
+        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG:4326')
         nodes = gpd.read_feather(os.path.join(self.path, 'results', 'node_data.feather'))
-        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG: 4326')
+        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG:4326')
         generators = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'generator_data.feather'))
-        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG: 4326')
+        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG:4326')
 
 
         self.tech_colors = {
@@ -62,7 +62,7 @@ class canada_visualizations():
 
     def create_base_map(self, USA=False, annotated=False):
         territories = ['60', '61', '62']
-        zones = self.zones.copy().to_crs('EPSG: 3347')
+        zones = self.zones.copy().to_crs('EPSG:3347')
         zones['colour'] = 'whitesmoke'
         zones.loc[zones.cluster.isin(territories), 'colour'] = 'white'
 
@@ -72,7 +72,7 @@ class canada_visualizations():
         if annotated:
             zones.apply(lambda x: ax.annotate(text=x['cluster'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=30), axis=1)
         if USA:
-            usa_map = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'usa_map.feather')).to_crs('EPSG: 3347')
+            usa_map = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'usa_map.feather')).to_crs('EPSG:3347')
             usa_map.plot(ax=ax, color='white', edgecolor='black', linewidth=1)
         return fig, ax
 
@@ -83,7 +83,7 @@ class canada_visualizations():
     def plot_base(self):
         fig, ax = plt.subplots(figsize = (100,100))
         ax.set_facecolor('white')
-        zones = gpd.read_file(os.path.join(self.path, 'data', 'map_files', 'census_map', 'lcd_000b21a_e.shp')).to_crs('EPSG: 3347')
+        zones = gpd.read_file(os.path.join(self.path, 'data', 'map_files', 'census_map', 'lcd_000b21a_e.shp')).to_crs('EPSG:3347')
         zones['colour'] = 'whitesmoke'
         zones.plot(ax=ax, color=zones.colour, edgecolor='black', linewidth=1) 
         plt.savefig(os.path.join(self.vis_results, f'base_map.png'))
@@ -93,7 +93,7 @@ class canada_visualizations():
         prices = prices.replace({1000000: 0, 850000.0005029261: 0, 722500.0008549744: 0})
         mean_price = prices.mean()
         mean_price.name = 'zonal_prices'
-        mean_price = pd.merge(self.zones.to_crs('EPSG: 3347'), mean_price, left_on='cluster', right_index=True)
+        mean_price = pd.merge(self.zones.to_crs('EPSG:3347'), mean_price, left_on='cluster', right_index=True)
         
         fig, ax = self.create_base_map(USA=False, annotated=False)
         mean_price.plot(ax=ax,
@@ -106,8 +106,8 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.vis_results, f'zonal_prices_{year}.png'))
 
     def plot_potentials(self, type='PV'):
-        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'gridcells.feather')).to_crs('EPSG: 3347')
-        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG: 3347')
+        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'gridcells.feather')).to_crs('EPSG:3347')
+        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG:3347')
 
         # Filter cells with less than 10% onshore
         gridcells = gridcells[gridcells.percent_in_canada >= 0.5]
@@ -115,7 +115,7 @@ class canada_visualizations():
         gridcells = gridcells[gridcells.close_to_grid]
 
         # wind/solar generators
-        generators = self.generators.copy().to_crs('EPSG: 3347')
+        generators = self.generators.copy().to_crs('EPSG:3347')
         if type == 'PV':
             generators = generators[(generators.gen_type.str.contains(type))]
         else:
@@ -144,7 +144,7 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.vis_results, f'potential_mapping_{type}.png'))
 
     def plot_lines(self, year, new):
-        lines = self.lines.copy().to_crs('EPSG: 3347')
+        lines = self.lines.copy().to_crs('EPSG:3347')
         lines.index = lines.start + '->' + lines.end
         results = self.results.copy()
         results = results[results.Parameter.isin(['New_Transmission_Capacity', 'Transmission_Capacity'])]
@@ -186,10 +186,10 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.vis_results, f'line_capacity-{year}-{name}.png'))
 
     def plot_generators(self, lines=True):
-        generators = self.generators.copy().to_crs('EPSG: 3347')
+        generators = self.generators.copy().to_crs('EPSG:3347')
 
         if lines:
-            lines = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'power_lines.feather')).to_crs('EPSG: 3347')
+            lines = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'power_lines.feather')).to_crs('EPSG:3347')
             line_colour = 'darkturquoise'
         fig, ax = self.create_base_map(USA=True, annotated=False)
         generators['node_size'] = self.scaling(generators['p_nom'], 100, 10000)
@@ -246,7 +246,7 @@ class canada_visualizations():
             cmap = 'BuPu'
 
         name = f'OPT_{gen_type}_average_cf'
-        gridcells = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'filtered_gridcells.feather')).to_crs('EPSG: 3347')
+        gridcells = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'filtered_gridcells.feather')).to_crs('EPSG:3347')
         cf_data = pd.read_csv(os.path.join(self.path, 'results', f'{name}.csv'), index_col=0)
         gridcells = gridcells.join(cf_data)
         gridcells = gridcells[~gridcells[f'OPT_{gen_type}'].isna()]
@@ -261,7 +261,7 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.vis_results, f'potential_mapping_{gen_type}.png'))
 
     def plot_industrial_loads(self):
-        loads = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'industrial_loads.feather')).to_crs('EPSG: 3347')
+        loads = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'industrial_loads.feather')).to_crs('EPSG:3347')
         fig, ax = self.create_base_map(USA=True, annotated=False)
         loads['node_size'] = self.scaling(loads['load'], 100, 10000)
 
@@ -275,8 +275,8 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.path, 'results', 'visualizations', 'industrial_loads_Canada.png'))
 
     def plot_hydro_basins(self):
-        hydro_basins = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'river_basins.feather')).to_crs('EPSG: 3347')
-        hydro_generators = self.generators.copy().to_crs('EPSG: 3347')
+        hydro_basins = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'river_basins.feather')).to_crs('EPSG:3347')
+        hydro_generators = self.generators.copy().to_crs('EPSG:3347')
         hydro_generators = hydro_generators[hydro_generators.gen_type.str.contains('hydro')]
 
         fig, ax = self.create_base_map(USA=False, annotated=False)
@@ -315,7 +315,7 @@ class canada_visualizations():
             sorted_pair = sorted([start, end])
             return '->'.join(sorted_pair)
         
-        lines = self.lines.copy().to_crs('EPSG: 3347')
+        lines = self.lines.copy().to_crs('EPSG:3347')
         lines.loc[:, 'line'] = lines.start + '->' + lines.end
         lines.index = lines.line.apply(normalize_direction)
 
@@ -324,7 +324,7 @@ class canada_visualizations():
         results.loc[:, 'Time'] = results.Time.astype(int)
         results = results[results.Time == year]
 
-        zones = self.zones.copy().to_crs('EPSG: 3347')
+        zones = self.zones.copy().to_crs('EPSG:3347')
         zones.index = zones.cluster
         fig, ax = self.create_base_map(USA=True, annotated=False)
 
