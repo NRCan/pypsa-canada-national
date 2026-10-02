@@ -17,13 +17,13 @@ class canada_visualizations():
         
         # Read data
         zones = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'clustered_zone_data.feather')).reset_index()
-        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG: 4326').rename(columns={'index':'cluster'})
+        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG:4326').rename(columns={'index':'cluster'})
         lines = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'cluster_interfaces.feather'))
-        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG: 4326')
+        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG:4326')
         nodes = gpd.read_feather(os.path.join(self.path, 'results', 'node_data.feather'))
-        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG: 4326')
+        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG:4326')
         generators = gpd.read_feather(os.path.join(self.path, 'results', 'visualization_data', 'generator_data.feather'))
-        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG: 4326')
+        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG:4326')
 
         self.gen_type_map = {
             'coal_IGCC': 'Coal',

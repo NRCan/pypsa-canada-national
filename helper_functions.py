@@ -51,7 +51,7 @@ def download_and_unzip(url:str, output_path:str, extract_to:str):
 # Function to create geopandas dataframe of points at each node
 def mapPoints(data): #given a dataframe with one set of lon/lat co-ords
     geometry = [Point(xy) for xy in zip(data['longitude'], data['latitude'])]
-    geo_df = gpd.GeoDataFrame(data, crs = {'init':'EPSG:4326'}, geometry = geometry).to_crs('EPSG: 4326')
+    geo_df = gpd.GeoDataFrame(data, crs = {'init':'EPSG:4326'}, geometry = geometry).to_crs('EPSG:4326')
     return geo_df
 
 # Function to create geopandas dataframe with lines between nodes,

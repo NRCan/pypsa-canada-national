@@ -17,7 +17,7 @@ def clip_by_lat(geom, min_lon, max_lon, min_lat, max_lat):
 def add_territories():
     path = os.getcwd()
     zones = gpd.read_feather(os.path.join(path, 'results', 'clustered_zone_data.feather'))
-    census_areas = gpd.read_file(os.path.join(path, 'data', 'map_files', 'census_map', 'lcd_000b21a_e.shp')).to_crs('EPSG: 4326')
+    census_areas = gpd.read_file(os.path.join(path, 'data', 'map_files', 'census_map', 'lcd_000b21a_e.shp')).to_crs('EPSG:4326')
     territories = census_areas[census_areas.PRUID.astype(int) >= 60]
     territories = territories.dissolve(by='PRUID', aggfunc='first')
     # Apply clipping to your geometries
@@ -27,8 +27,8 @@ def add_territories():
 
 def add_usa():
     path = os.getcwd()
-    usa_map = gpd.read_file(os.path.join(path, 'data', 'map_files', 'USA_map', 'cb_2018_us_state_5m.shp')).to_crs('EPSG: 4326')
-    #usa_map = gpd.GeoDataFrame(usa_map, geometry=usa_map.geometry, crs='EPSG: 4326')
+    usa_map = gpd.read_file(os.path.join(path, 'data', 'map_files', 'USA_map', 'cb_2018_us_state_5m.shp')).to_crs('EPSG:4326')
+    #usa_map = gpd.GeoDataFrame(usa_map, geometry=usa_map.geometry, crs='EPSG:4326')
     usa_map['geometry'] = usa_map['geometry'].apply(lambda geom: clip_by_lat(geom, -142, -53, 35, 90)) 
     #usa_map['geometry'] = usa_map['geometry'].apply(lambda geom: clip_by_lat(geom, -170, -65, 0, 90)) # Alaska
     usa_map.to_feather(os.path.join(path, 'results', 'visualization_data', 'usa_map.feather'))
