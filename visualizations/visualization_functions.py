@@ -89,8 +89,8 @@ def mapLines(data):  #given a dataframe with 2 sets of lon/lat co-ords
 
 ### LOAD FILES
 path = os.getcwd()
-cluster_data = gpd.read_feather(os.path.join(path, 'results', 'clustered_zone_data.feather')).to_crs('EPSG: 4326')
-nearest_nodes = gpd.read_feather(os.path.join(path, 'results', 'nearest_nodes.feather')).to_crs('EPSG: 4326')
+cluster_data = gpd.read_feather(os.path.join(path, 'results', 'clustered_zone_data.feather')).to_crs('EPSG:4326')
+nearest_nodes = gpd.read_feather(os.path.join(path, 'results', 'nearest_nodes.feather')).to_crs('EPSG:4326')
 transfer_capacities = pd.read_csv(os.path.join(path, 'results', 'transfer capacities.csv'))
 
 transfer_capacities = transfer_capacities.merge(nearest_nodes['geometry'], how='left', left_on='cluster_1', right_on='cluster')
@@ -102,9 +102,9 @@ plot(cluster_data.reset_index(), transfer_capacities, nearest_nodes, 'Canada')
 
 # Reading census area shapefile
 path = os.getcwd()
-all_lines = gpd.read_feather(os.path.join(path, 'results', 'line_data.feather')).to_crs('EPSG: 4326')
-zone_data = gpd.read_feather(os.path.join(path, 'results', 'clustered_zone_data.feather')).to_crs('EPSG: 4326').reset_index()
-node_data = gpd.read_feather(os.path.join(path, 'results', 'node_data.feather')).to_crs('EPSG: 4326').reset_index()
+all_lines = gpd.read_feather(os.path.join(path, 'results', 'line_data.feather')).to_crs('EPSG:4326')
+zone_data = gpd.read_feather(os.path.join(path, 'results', 'clustered_zone_data.feather')).to_crs('EPSG:4326').reset_index()
+node_data = gpd.read_feather(os.path.join(path, 'results', 'node_data.feather')).to_crs('EPSG:4326').reset_index()
 cluster_data = pd.read_csv(os.path.join(path, 'results', 'manual_cluster_data.csv'), index_col=0)
 generators = pd.read_csv(os.path.join(path, 'data', 'CODERS', 'generators.csv'))
 
@@ -156,9 +156,9 @@ def plot_clusters(zones, lines, nodes, name, category, colourmap):
 
 # Reading census area shapefile
 path = os.getcwd()
-all_lines = gpd.read_feather(os.path.join(path, 'results', 'line_data.feather')).to_crs('EPSG: 4326')
-zone_data = gpd.read_feather(os.path.join(path, 'results', 'zone_data.feather')).to_crs('EPSG: 4326')
-node_data = gpd.read_feather(os.path.join(path, 'results', 'node_data.feather')).to_crs('EPSG: 4326')
+all_lines = gpd.read_feather(os.path.join(path, 'results', 'line_data.feather')).to_crs('EPSG:4326')
+zone_data = gpd.read_feather(os.path.join(path, 'results', 'zone_data.feather')).to_crs('EPSG:4326')
+node_data = gpd.read_feather(os.path.join(path, 'results', 'node_data.feather')).to_crs('EPSG:4326')
 
 province = 'AB'
 categories = {'population':'Reds', 'hydro_generation':'Blues', 'nuclear_generation':'Greens', 'solar_generation':'YlOrBr', 'thermal_generation':'Greys', 'wind_generation':'Purples'}
@@ -179,7 +179,7 @@ for category, colourmap in categories.items():
 #Degree spacing between grid cells
 latDeg = 0.5
 lonDeg = 0.625
-gridcells = gridcells.to_crs('EPSG: 4326')
+gridcells = gridcells.to_crs('EPSG:4326')
 polys = []
 #convert grid cell points to grid cell polygons
 for index, row in gridcells.iterrows():

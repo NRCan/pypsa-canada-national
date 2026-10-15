@@ -12,17 +12,17 @@ class canada_visualizations():
 
         # Read data
         zones = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'clustered_zone_data.feather')).reset_index()
-        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG: 4326')
+        self.zones = gpd.GeoDataFrame(zones, geometry=zones.geometry, crs='EPSG:4326')
         lines = gpd.read_feather(os.path.join(self.path, 'results', 'cluster_interfaces.feather'))
-        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG: 4326')
+        self.lines = gpd.GeoDataFrame(lines, geometry=lines.geometry, crs='EPSG:4326')
         nodes = gpd.read_feather(os.path.join(self.path, 'results', 'node_data.feather'))
-        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG: 4326')
+        self.nodes = gpd.GeoDataFrame(nodes, geometry=nodes.geometry, crs='EPSG:4326')
         generators = gpd.read_feather(os.path.join(self.vis_results, 'generator_data.feather'))
-        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG: 4326')
+        self.generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG:4326')
 
     def create_base_map(self, USA=False, annotated=False):
         territories = ['YT', 'NT', 'NU']
-        zones = self.zones.copy().to_crs('EPSG: 3347')
+        zones = self.zones.copy().to_crs('EPSG:3347')
         zones['colour'] = 'whitesmoke'
         zones.loc[zones.cluster.isin(territories), 'colour'] = 'gainsboro'
 
@@ -32,7 +32,7 @@ class canada_visualizations():
         if annotated:
             zones.apply(lambda x: ax.annotate(text=x['cluster'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=30), axis=1)
         if USA:
-            usa_map = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'usa_map.feather')).to_crs('EPSG: 3347')
+            usa_map = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'usa_map.feather')).to_crs('EPSG:3347')
             usa_map.plot(ax=ax, color='gainsboro', edgecolor='black', linewidth=0.5)
         return fig, ax
 
@@ -49,11 +49,11 @@ class canada_visualizations():
         }
         colour_map = ListedColormap(plt.get_cmap('tab20').colors + plt.get_cmap('tab20b').colors)
         
-        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'filtered_gridcells.feather')).to_crs('EPSG: 3347')
+        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'filtered_gridcells.feather')).to_crs('EPSG:3347')
         unused_cells = gridcells[gridcells.category == 'None']
 
         # wind/solar generators
-        generators = self.generators.copy().to_crs('EPSG: 3347')
+        generators = self.generators.copy().to_crs('EPSG:3347')
         generators = generators[(generators.gen_type == 'Solar PV') | (generators.gen_type == 'Onshore Wind')]
         generators['node_size'] = self.scaling(generators['p_nom'], 100, 1000)
 
@@ -77,8 +77,8 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.vis_results, 'gridcell_mapping.png'))
 
     def plot_potentials(self, type='PV'):
-        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'gridcells.feather')).to_crs('EPSG: 3347')
-        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG: 3347')
+        gridcells = gpd.read_feather(os.path.join(self.vis_results, 'gridcells.feather')).to_crs('EPSG:3347')
+        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG:3347')
 
         # Filter cells with less than 10% onshore
         gridcells = gridcells[gridcells.percent_in_canada >= 0.5]
@@ -86,7 +86,7 @@ class canada_visualizations():
         gridcells = gridcells[gridcells.close_to_grid]
 
         # wind/solar generators
-        generators = self.generators.copy().to_crs('EPSG: 3347')
+        generators = self.generators.copy().to_crs('EPSG:3347')
         if type == 'PV':
             generators = generators[(generators.gen_type.str.contains(type))]
         else:
@@ -116,8 +116,8 @@ class canada_visualizations():
 
     def plot_generators(self):
         generators = gpd.read_feather(os.path.join(self.vis_results, 'generator_data.feather'))
-        generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG: 4326').to_crs('EPSG: 3347')
-        lines = self.lines.copy().to_crs('EPSG: 3347')
+        generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG:4326').to_crs('EPSG:3347')
+        lines = self.lines.copy().to_crs('EPSG:3347')
 
         ### PLOTTING with census regions
         fig, ax = self.create_base_map(USA=True, annotated=False)
@@ -183,8 +183,8 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.path, 'results', 'visualizations', 'industrial_loads_Canada.png'))
 
     def plot_hydro_basins(self):
-        hydro_basins = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'river_basins.feather')).to_crs('EPSG: 3347')
-        hydro_generators = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'hydro_generators.feather')).to_crs('EPSG: 3347')
+        hydro_basins = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'river_basins.feather')).to_crs('EPSG:3347')
+        hydro_generators = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'hydro_generators.feather')).to_crs('EPSG:3347')
         used_basins = pd.read_csv(os.path.join(self.path, 'results', 'testing', 'ror_energy_check.csv'), index_col=0)
 
         fig, ax = self.create_base_map(USA=False, annotated=False)
@@ -210,10 +210,10 @@ class canada_visualizations():
 
     def plot_dams(self):
         generators = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'generator_data.feather'))
-        generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG: 4326').to_crs('EPSG: 3347')
+        generators = gpd.GeoDataFrame(generators, geometry=generators.geometry, crs='EPSG:4326').to_crs('EPSG:3347')
         generators = generators[generators.gen_type.str.contains('Hydro')]
 
-        dams = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'dam_map.feather')).to_crs('EPSG: 3347')
+        dams = gpd.read_feather(os.path.join(self.path, 'results', 'visualizations', 'dam_map.feather')).to_crs('EPSG:3347')
 
         ### PLOTTING with census regions
         fig, ax = self.create_base_map(USA=True, annotated=False)
@@ -239,8 +239,8 @@ class canada_visualizations():
         plt.savefig(os.path.join(self.path, 'results', 'visualizations', 'hydro_gens_dams.png'))
 
     def plot_canvec_data(self):
-        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG: 3347')
-        transformers = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'transformer_data_0.feather')).to_crs('EPSG: 3347')
+        lines = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'power_lines.feather')).to_crs('EPSG:3347')
+        transformers = gpd.read_feather(os.path.join(self.path, 'results', 'testing', 'transformer_data_0.feather')).to_crs('EPSG:3347')
 
         # Draw buffer zone around lines and transformers
         buffered_lines = gpd.GeoDataFrame(geometry=[lines.geometry.buffer(20000).union_all()], crs=lines.crs)
