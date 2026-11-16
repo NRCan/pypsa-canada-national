@@ -7,6 +7,7 @@ run:
   shared_cutouts: true # set to true to share the default cutout(s) across runs
   validation: false # set to true to run back-casting plots
   export_csv: true # set to true to export csv files of the model outputs
+  workflow_stages: ["planning", "dispatch"]  # "planning", "dispatch", or "flexibility(TBI)"
 
 year_settings:
   ref_year: 2025
@@ -36,19 +37,31 @@ solving:
       keep_files: false
       store_model: false
   solver:
-    name: &solver_name cplex
-    options: cplex-default
+    name: &solver_name highs
+    options: highs-fast
   solver_options:
-    "cplex-default":
-      threads: 4
-      lpmethod: 4
-      solutiontype: 2
-      barrier.convergetol: 1.0e-05
-      feasopt.tolerance: 1.0e-06
+    "highs-fast":
+      threads: 8
+      solver: ipm
+      run_crossover: 'off'
+      small_matrix_value: 1.0e-06
+      large_matrix_value: 1000000000.0
+      primal_feasibility_tolerance: 1.0e-01
+      dual_feasibility_tolerance: 1.0e-01
+      ipm_optimality_tolerance: 0.01
+      parallel: 'on'
+      random_seed: 123
+      # time_limit: 30
+      mip_abs_gap: 0.1
+      mip_rel_gap: 0.1
 
 load:
-  load_mode: &load_mode "full_load"
+  #Load CSV file already containing every year load:
+  load_mode: &load_mode "FULL_LOAD"
   load_growth_forecast: "model/national_model/loads_forecast_CM.csv"
+  #Apply growth factor to a base year profile "loads-p_set.csv":
+  # load_mode: &load_mode "GROWTH_FORECAST"
+  # load_growth_forecast: "model/minimal_model/load_growth.csv"
 
 components:
   override_dir: ""
@@ -57,13 +70,20 @@ components:
   obps: true
   technology_costs: "Default_costs"
   carbon_tax:
-    "2021": 43.04 # $ per tonne, based on federal minimums
+    "2021": 43.04 # $ per tonne, based on federal minimums and in 2022 CAD
     "2025": 87.45
     "2030": 95.89
     "2035": 98.17
     "2040": 95.76
     "2045": 86.73
     "2050": 78.56
+  # carbon_tax_exemptions: #Exempt a specific province, carrier or technology from carbon tax
+  #   provinces: ["QC", "NY"]
+  #   carriers: ["coal"]
+  #   models: ["gas_CC"]
+  base_load: #Force generators to operate (p_min_pu defined in generator_generic_data.csv)
+    "SK": ["coal_IGCC"]
+    "NS": ["coal_IGCC"]
 
 snapshots:
   #method: "OPT_VRE_HYDRO", "KMEDOID_VRE_HYDRO", "CARPE_DIEM", "AVG_PEAK" or "ALL_DAYS"
@@ -113,6 +133,8 @@ planning:
         }
       # minimum capacity
       min_cap: 25
+      # provinces to exclude from CER
+      exemptions: []
     NZ_constraint:
       enable: false
     planning_reserve_margin:
@@ -131,16 +153,33 @@ planning:
         "NL": 1.2
     component_capacity_expansion_constraint:
       enable: false
-      # custom_constraint_filepath: ""
+      # custom_constraint_filepath: "data/constraints/custom_constraints.csv"
+
   custom_constraints:
     enabled: false
     module_path: null
+
+  modify_components:
+    links:
+    generators:
+      # 'BUS_1 Coal':
+      #   p_nom_extendable: False
+      #   efficiency: 0.55
+      #   p_nom: 300
+
+      # 'BUS_3 Gas':
+      #   action: "Delete"
+    storage_units:
+    lines:
+    stores:
 
 dispatch:
   #Snapshots related
   horizon: 8760 #336 #2 weeks in hours
   overlap: 0 #48
   investment_period: [] #If empty, it will take the planning investment periods
+
+  # planning_solved_network: '' # Path to solve planning network folder (csvs) to use for dispatch only stage
 
   constraints:
     add_stop_production:
@@ -173,6 +212,8 @@ dispatch:
       min_cap: 25
       # forecast hours based on net load ('load'), uniformly ('uniform'), or assign max to first UC period and carry leftover ('carryover')
       forecast_hours: 'carryover'
+      # provinces to exclude from CER
+      exemptions: []
 
   custom_constraints:
     enabled: false
