@@ -7,9 +7,10 @@ run:
   shared_cutouts: true # set to true to share the default cutout(s) across runs
   validation: false # set to true to run back-casting plots
   export_csv: true # set to true to export csv files of the model outputs
+  workflow_stages: ["dispatch"]  # "planning", "dispatch", or "flexibility(TBI)"
 
 year_settings:
-  ref_year: 2021
+  ref_year: 2025
   start_year: 2025
   forecast_year: 2050
   investment_period: [2025, 2030, 2050]
@@ -45,10 +46,6 @@ solving:
       mip_abs_gap: 0.1
       mip_rel_gap: 0.1
 
-load:
-  load_mode: &load_mode "custom"
-  load_growth_forecast: "model/national_model/loads_forecast.csv"
-
 components:
   override_dir: ""
   components_dir: "data/components"
@@ -56,48 +53,34 @@ components:
   obps: true
   technology_costs: "Default_costs"
   carbon_tax:
-    "2021": 43.04 # $ per tonne, based on federal minimums
+    "2021": 43.04 # $ per tonne, based on federal minimums and in 2022 CAD
     "2025": 87.45
     "2030": 95.89
     "2035": 98.17
     "2040": 95.76
     "2045": 86.73
     "2050": 78.56
-
-snapshots:
-  method: "OPT_VRE_HYDRO"
-  load_mode: *load_mode
-  folder_name: "model/national_model"
-  last_investment_period: 5 #duration in years
-
-  # Rep days config
-  # rep_length: None
-  cluster: 5
-  include_hydro: true
-  solver: *solver_name
-  extreme_days_select: false
-  save_fig: false
-  save_csv: false
-  saving_folder_path: saves
-  provinces_selection: ["AB", "BC", "MB", "NB", "NS", "ON", "PE", "QC", "SK", "NL"]
-  # year: None
-  aggregate: false
-
-extra_loads:
-  is_used: false
-  extra_loads: data/base
-  path: data/base
+  # carbon_tax_exemptions: #Exempt a specific province, carrier or technology from carbon tax
+  #   provinces: ["QC", "NY"]
+  #   carriers: ["coal"]
+  #   models: ["gas_CC"]
+  # base_load: #Force generators to operate (p_min_pu defined in generator_generic_data.csv)
+  #   "SK": ["coal_IGCC"]
+  #   "NS": ["coal_IGCC"]
 
 dispatch:
   #Snapshots related
   horizon: 8760 #336 #2 weeks in hours
   overlap: 0 #48
-  investment_period: [2025] #If empty, it will take the planning investment periods
+  investment_period: [] #If empty, it will take the planning investment periods
+
+  planning_solved_network: 'TO COMPLETE' # Path to solve planning model to use for dispatch only stage
 
   constraints:
     add_stop_production:
-      enable: false
-      2030: ["coal"]
+      enable: true
+      years:
+        2030: ["coal"]
     add_spilling_variable:
       enable: false
     add_bidirection_link:
@@ -106,7 +89,7 @@ dispatch:
       enable: false
     #   maximum_soc_storage_value: 2000
     CER_constraint:
-      enable: false
+      enable: true
       # modes = hourly, emissions
       mode: 'emissions'
       # aggregation levels: provincial, group, individual
@@ -124,6 +107,8 @@ dispatch:
       min_cap: 25
       # forecast hours based on net load ('load'), uniformly ('uniform'), or assign max to first UC period and carry leftover ('carryover')
       forecast_hours: 'carryover'
+      # provinces to exclude from CER
+      exemptions: []
 
   custom_constraints:
     enabled: false
