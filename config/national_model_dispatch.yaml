@@ -10,41 +10,28 @@ run:
   workflow_stages: ["dispatch"]  # "planning", "dispatch", or "flexibility(TBI)"
 
 year_settings:
-  ref_year: 2025
-  start_year: 2025
-  forecast_year: 2050
-  investment_period: [2025, 2030, 2050]
+  investment_period: [2025, 2050]
   discount_rate: 0.05
 
 solving:
-  options:
-    dispatch:
-      include_objective_constant : true
-      enable_committable: true
-      enable_p_min_pu: true
-      enable_ramp_rates: true
-      load_shedding: false
-      linearized_unit_commitment: false
-      keep_files: false
-      store_model: false
+  options: # Enable run options for planning and dispatch
+    include_objective_constant : ['dispatch']
+    load_shedding: ['dispatch']
+    enable_committable: ['dispatch']
+    enable_p_min_pu: ['dispatch']
+    enable_ramp_rates: ['dispatch']
+    linearized_unit_commitment: []
   solver:
     name: &solver_name highs
     options: highs-fast
-  solver_options:
-    "highs-fast":
-      threads: 8
-      solver: ipm
-      run_crossover: 'off'
-      small_matrix_value: 1.0e-06
-      large_matrix_value: 1000000000.0
-      primal_feasibility_tolerance: 1.0e-01
-      dual_feasibility_tolerance: 1.0e-01
-      ipm_optimality_tolerance: 0.01
-      parallel: 'on'
-      random_seed: 123
-      # time_limit: 30
-      mip_abs_gap: 0.1
-      mip_rel_gap: 0.1
+
+load:
+  #Load CSV file already containing every year load:
+  load_mode: &load_mode "FULL_LOAD"
+  load_growth_forecast: "model/national_model/loads_forecast_CM.csv"
+  #Apply growth factor to a base year profile "loads-p_set.csv":
+  # load_mode: &load_mode "GROWTH_FORECAST"
+  # load_growth_forecast: "model/minimal_model/load_growth.csv"
 
 components:
   override_dir: ""
@@ -68,6 +55,30 @@ components:
   #   "SK": ["coal_IGCC"]
   #   "NS": ["coal_IGCC"]
 
+# Constraints common across models
+constraints:
+  CER_constraint:
+    enable: ['dispatch']
+    aggregation: 'provincial' # aggregation levels: provincial, group, individual
+    start_year: 2035 # year that constraint becomes active
+    carriers: ['oil', 'gas', 'diesel'] # carriers to include
+    # values for hourly mode is number of hours, values for emissions mode is emission intensity (in tC02eq/GWh)
+    values: {
+      limit: {2035: 65, 2050: 0},
+      offset: {2035: 35, 2050: 42}
+      }
+    min_cap: 25 # minimum capacity, above which the CER applies
+    exemptions: [] # Provinces that are exempt from the CER regulation
+    dispatch_params:
+      # forecast hours based on net load ('load'), uniformly ('uniform'), or assign max to first UC period and carry leftover ('carryover')
+      forecast_hours: 'carryover'
+      mode: 'emissions' # modes = hourly, emissions
+
+  add_stop_production:
+    enable: ['dispatch']
+    years:
+      2030: ["coal"]
+
 dispatch:
   #Snapshots related
   horizon: 8760 #336 #2 weeks in hours
@@ -77,10 +88,6 @@ dispatch:
   planning_solved_network: 'TO COMPLETE' # Path to solve planning model to use for dispatch only stage
 
   constraints:
-    add_stop_production:
-      enable: true
-      years:
-        2030: ["coal"]
     add_spilling_variable:
       enable: false
     add_bidirection_link:
@@ -88,27 +95,6 @@ dispatch:
     add_prevent_spill_if_not_fully_charged:
       enable: false
     #   maximum_soc_storage_value: 2000
-    CER_constraint:
-      enable: true
-      # modes = hourly, emissions
-      mode: 'emissions'
-      # aggregation levels: provincial, group, individual
-      aggregation: 'provincial'
-      # year that constraint becomes active
-      year: 2035
-      # carriers to include
-      carriers: ['oil', 'gas', 'diesel']
-      # values for hourly mode is number of hours, values for emissions mode is emission intensity (in tC02eq/GWh)
-      values: {
-        limit: {2035: 65, 2050: 0},
-        offset: {2035: 35, 2050: 42}
-        }
-      # minimum capacity
-      min_cap: 25
-      # forecast hours based on net load ('load'), uniformly ('uniform'), or assign max to first UC period and carry leftover ('carryover')
-      forecast_hours: 'carryover'
-      # provinces to exclude from CER
-      exemptions: []
 
   custom_constraints:
     enabled: false
