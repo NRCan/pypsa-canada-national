@@ -64,7 +64,7 @@ snapshots:
 
   # Rep days config
   # rep_length: None
-  cluster: 2
+  cluster: 60
   include_hydro: true
   solver: *solver_name
   extreme_days_select: false
